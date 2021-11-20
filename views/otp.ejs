@@ -1,0 +1,15 @@
+<h1> Login </h1>
+<%- include ('./partials/messages') %>
+<h5>Enter the OTP sent to your registered Email ID</h5>
+<form action="/users/login-otp" method="POST">
+    <div>
+        <label for="otp"></label>
+        <input
+                type="otp"
+                name="otp"
+                placeholder="Enter OTP"
+        />
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Verify</button>
+
+</form>
