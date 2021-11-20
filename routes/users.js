@@ -104,7 +104,7 @@ router.get('/logout', (req,res)=>{
 async function makePostRequest(email) {
 
     let payload = { email: email, type: "2FA" };
-    let res = await axios.post('http://localhost:4500/api/v1/email/otp', payload);
+    let res = await axios.post('http://localhost:4500/api/email/otp', payload);
 
     let data = res.data;
     console.log(data);
@@ -133,7 +133,7 @@ router.post('/login-otp', ensureAuthenticated, (req, res) => {
     let _otp = req.body.otp;
     let _email = req.user.email;
     let payload = { otp: _otp, verification_key: ver_key,  check: _email  };
-    axios.post('http://localhost:4500/api/v1/verify/otp', payload)
+    axios.post('http://localhost:4500/api/verify/otp', payload)
         .then(function (response) {
             console.log(response);
             if(response.data.Status === "Success") {

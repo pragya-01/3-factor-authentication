@@ -9,9 +9,8 @@ module.exports = {
     },
     ensure2FA : function(req,res,next) {
         // check db for 2fa
-        // let second_fa;
         User.findOne({email: req.user.email}).exec((err, user) => {
-            console.log(user);
+            console.log("user found");
             if(req.isAuthenticated()) {  // Add 2FA check
                 return next();
             }
