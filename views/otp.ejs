@@ -1,15 +1,39 @@
-<h1> Login </h1>
-<%- include ('./partials/messages') %>
-<h5>Enter the OTP sent to your registered Email ID</h5>
-<form action="/users/login-otp" method="POST">
-    <div>
-        <label for="otp"></label>
-        <input
-                type="otp"
-                name="otp"
-                placeholder="Enter OTP"
-        />
-    </div>
-    <button type="submit" class="btn btn-primary btn-block">Verify</button>
+<!DOCTYPE html>
+<html lang="en">
 
-</form>
+<head>
+    <%- include('./partials/head'); %>
+</head>
+
+<body>
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="text-center p-5 m-5" style="width: 760px; background: #ffffff; border-radius: 10px">
+            <form class="" action="/users/login-otp" method="POST">
+                <span class="login100-form-title">
+                    OTP Verification
+                </span>
+                <%- include ('./partials/messages') %>
+                <h5 class="p-3 mb-2">Enter the OTP sent to your registered Email ID</h5>
+                <div class="p-2 m-auto" style="width: 20rem">
+                    <input class="input100"
+                           type="text"
+                           name="otp"
+                           placeholder="Enter OTP"
+                    >
+                </div>
+
+                <div class="container-login100-form-btn m-auto" style="width: 19rem">
+                    <button class="login100-form-btn" type="submit">
+                        Verify OTP
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

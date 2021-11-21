@@ -1,6 +1,29 @@
-<p> Welcome <%= user.name %></p>
-<!--<a href="/users/login"> Logout</a>-->
+<!--<p> Welcome <%= user.name %></p>-->
+<!--<form action="/users/logout" method="get">-->
+<!--    <button name="logout" value="logout">Logout</button>-->
+<!--</form>-->
 
-<form action="/users/logout" method="get">
-    <button name="logout" value="logout">Logout</button>
-</form>
+<head>
+    <%- include('./partials/head'); %>
+</head>
+
+<body>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+
+                <div class="m-auto pb-3">
+<!--                    <div style="width: 150px" class="login100-pic js-tilt text-center" data-tilt>-->
+<!--                        <img src="/images/img-01.png" alt="IMG">-->
+<!--                    </div>-->
+                    <h4 class="text-center" style="margin-bottom: 35px"> Welcome, <%= user.name %> !!</h4>
+                    <h5 class="text-center" style="margin-bottom: 50px"> You are authenticated. </h5>
+                    <form class="text-center mb-4" action="/users/logout" method="get">
+                        <button style="width: 12rem; border-radius: 3rem; margin: 20px" class="btn btn-danger" name="logout" value="logout">Logout</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

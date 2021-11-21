@@ -9,10 +9,10 @@ const {parse} = require("nodemon/lib/cli");
 
 //login handle
 router.get('/login',  (req,res)=>{
-    res.render('login');
+    res.render('new-login');
 })
 router.get('/register' , (req,res)=>{
-    res.render('register');
+    res.render('new-register');
 })
 
 //Register handle
@@ -147,7 +147,8 @@ router.post('/login-otp', ensureAuthenticated, (req, res) => {
             }
         })
         .catch(err => {
-            res.send(err);
+            res.send("Wrong OTP");
+            //res.send(err);
         })
 })
 

@@ -13,6 +13,7 @@ require("./config/passport")(passport)
 
 //EJS
 app.set('view engine','ejs');
+app.use(express.static(__dirname + '/public'));
 app.use(expressEjsLayout);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : true}));

@@ -23,13 +23,6 @@ router.get('/allusers', (req,res)=>{
     //res.status(200).send(savedUsers);
 })
 
-//register page
-router.get('/register', (req,res)=>{
-    res.render('register');
-})
-
-
-
 
 module.exports = router;
 
